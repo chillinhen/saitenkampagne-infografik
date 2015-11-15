@@ -1,0 +1,78 @@
+body {
+	font-family: 'Open Sans' sans-serif;
+	font-size: 14px;
+}
+
+ul, li {
+	list-style-image: url('../img/bullet.svg');
+}
+h2{
+	font-size: 1.2em;
+	font-weight: 600;
+}
+.price {
+	font-size: 2em;
+	line-height: 2;
+}
+.masze, .price{
+	font-weight: 700;
+}
+li{
+	line-height: 2;
+}
+
+.wrapper{
+	display: flex;
+	justify-content: space-around;
+	align-items:flex-end;
+	
+	.item {
+		flex: 1;
+		text-align: center;
+		
+		.headline {
+		border-top: 2px solid #333;
+		}
+		.content > *{
+		border-top: 1px dashed #333;
+		}
+		.content > *:first-child{
+			border: 0;
+		}
+		
+	}
+
+}
+
+	.content{
+
+	margin: 0 2em;
+	background-repeat:repeat-x;
+	background-position: center bottom;
+	
+	
+	.my &{
+	background-image:url(../img/item-bg-my.svg);
+	background-size: auto 110px;
+	
+	}
+	.other &{
+	background-image:url(../img/item-bg-other.svg);
+	background-size: auto 262px;
+	}
+	}
+
+.icon{
+	background-repeat:no-repeat;
+	background-position: center bottom;
+    background-size: auto 60px;
+    .my & {
+    	background-image:url(../img/spool.svg);	
+    	/*height: 110px;*/
+    }
+    .other & {
+    	background-image: url(../img/stringset.svg);
+    }
+    
+}
+

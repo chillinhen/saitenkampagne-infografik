@@ -1,0 +1,89 @@
+/* line 1, ../scss/style.scss */
+body {
+  font-family: 'Open Sans' sans-serif;
+  font-size: 14px;
+}
+
+/* line 6, ../scss/style.scss */
+ul, li {
+  list-style-image: url("../img/bullet.svg");
+}
+
+/* line 9, ../scss/style.scss */
+h2 {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+/* line 13, ../scss/style.scss */
+.price {
+  font-size: 2em;
+  line-height: 2;
+}
+
+/* line 17, ../scss/style.scss */
+.masze, .price {
+  font-weight: 700;
+}
+
+/* line 20, ../scss/style.scss */
+li {
+  line-height: 2;
+}
+
+/* line 24, ../scss/style.scss */
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+/* line 29, ../scss/style.scss */
+.wrapper .item {
+  flex: 1;
+  text-align: center;
+}
+/* line 33, ../scss/style.scss */
+.wrapper .item .headline {
+  border-top: 2px solid #333;
+}
+/* line 36, ../scss/style.scss */
+.wrapper .item .content > * {
+  border-top: 1px dashed #333;
+}
+/* line 39, ../scss/style.scss */
+.wrapper .item .content > *:first-child {
+  border: 0;
+}
+
+/* line 47, ../scss/style.scss */
+.content {
+  margin: 0 2em;
+  background-repeat: repeat-x;
+  background-position: center bottom;
+}
+/* line 54, ../scss/style.scss */
+.my .content {
+  background-image: url(../img/item-bg-my.svg);
+  background-size: auto 110px;
+}
+/* line 59, ../scss/style.scss */
+.other .content {
+  background-image: url(../img/item-bg-other.svg);
+  background-size: auto 262px;
+}
+
+/* line 65, ../scss/style.scss */
+.icon {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: auto 60px;
+}
+/* line 69, ../scss/style.scss */
+.my .icon {
+  background-image: url(../img/spool.svg);
+  /*height: 110px;*/
+}
+/* line 73, ../scss/style.scss */
+.other .icon {
+  background-image: url(../img/stringset.svg);
+}
