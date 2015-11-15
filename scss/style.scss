@@ -17,7 +17,8 @@ ul, li {
 }
 h2{
 	font-size: 1.2em;
-	font-weight: 600;
+	font-weight: 800;
+	height: 2em;
 }
 .price {
 	font-size: 3em;
@@ -30,10 +31,17 @@ h2{
 li{
 	line-height: 2;
 }
-
+.my .headline{
+	background: url(../img/logo.png) center center no-repeat transparent;
+	background-size: contain;
+	text-indent: -200%;
+	display: block;
+	overflow: hidden;
+	width: 100%;
+}
 .wrapper{
 	width: 70%;
-	margin: 0 auto;
+	margin: 50px auto;
 	display: flex;
 	justify-content: space-around;
 	align-items:flex-end;
@@ -45,6 +53,7 @@ li{
 		.headline {
 		border-top: 2px solid #333;
 		}
+
 	&.info{
 		flex: 2;
 	}
@@ -61,13 +70,13 @@ li{
 	&.my:hover{
 		background-size: 50%;
 		@include transition;
-	}
+		}
 	}
 
 }
 
 .content{
-	min-height: 500px;
+	min-height: 420px;
 	margin: 0 2em;
 	background-repeat:repeat-x;
 	background-position: center bottom;
@@ -106,14 +115,14 @@ li{
 	background-size: auto 0%;
 	}
 	.other:hover &{
-		background-size: auto 70%;
+		background-size: auto 80%;
 		@include transition;
 	}
 }
 
 .icon{
 	background-repeat:no-repeat;
-	background-position: 50% 50%;
+	background-position: 50% 75%;
 	background-size: auto 80%;
 	.my & {
 		background-image:url(../img/spool.svg);

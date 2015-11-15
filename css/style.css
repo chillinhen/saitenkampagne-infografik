@@ -14,48 +14,59 @@ ul, li {
 /* line 18, ../scss/style.scss */
 h2 {
   font-size: 1.2em;
-  font-weight: 600;
+  font-weight: 800;
+  height: 2em;
 }
 
-/* line 22, ../scss/style.scss */
+/* line 23, ../scss/style.scss */
 .price {
   font-size: 3em;
   line-height: 2;
   opacity: 0;
 }
 
-/* line 27, ../scss/style.scss */
+/* line 28, ../scss/style.scss */
 .masze, .price {
   font-weight: 700;
 }
 
-/* line 30, ../scss/style.scss */
+/* line 31, ../scss/style.scss */
 li {
   line-height: 2;
 }
 
 /* line 34, ../scss/style.scss */
+.my .headline {
+  background: url(../img/logo.png) center center no-repeat transparent;
+  background-size: contain;
+  text-indent: -200%;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* line 42, ../scss/style.scss */
 .wrapper {
   width: 70%;
-  margin: 0 auto;
+  margin: 50px auto;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
 }
-/* line 41, ../scss/style.scss */
+/* line 49, ../scss/style.scss */
 .wrapper .item {
   flex: 1;
   text-align: center;
 }
-/* line 45, ../scss/style.scss */
+/* line 53, ../scss/style.scss */
 .wrapper .item .headline {
   border-top: 2px solid #333;
 }
-/* line 48, ../scss/style.scss */
+/* line 57, ../scss/style.scss */
 .wrapper .item.info {
   flex: 2;
 }
-/* line 52, ../scss/style.scss */
+/* line 61, ../scss/style.scss */
 .wrapper .item.my:hover .price, .wrapper .item.other:hover .price {
   opacity: 1;
   -webkit-transition: all 200ms ease-in;
@@ -64,12 +75,12 @@ li {
   -o-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
 }
-/* line 57, ../scss/style.scss */
+/* line 66, ../scss/style.scss */
 .wrapper .item.my {
   background: url(../img/bg-my.svg) transparent no-repeat 50% 35%;
   background-size: 0%;
 }
-/* line 61, ../scss/style.scss */
+/* line 70, ../scss/style.scss */
 .wrapper .item.my:hover {
   background-size: 50%;
   -webkit-transition: all 200ms ease-in;
@@ -79,9 +90,9 @@ li {
   transition: all 200ms ease-in;
 }
 
-/* line 69, ../scss/style.scss */
+/* line 78, ../scss/style.scss */
 .content {
-  min-height: 500px;
+  min-height: 420px;
   margin: 0 2em;
   background-repeat: repeat-x;
   background-position: center bottom;
@@ -89,36 +100,36 @@ li {
   flex-direction: column;
   justify-content: flex-end;
 }
-/* line 78, ../scss/style.scss */
+/* line 87, ../scss/style.scss */
 .content > * {
   flex: 1;
   border-top: 1px dashed white;
   /*border: 1px solid red;*/
   height: 100px;
 }
-/* line 84, ../scss/style.scss */
+/* line 93, ../scss/style.scss */
 .content .facts {
   text-align: left;
   border-color: #333;
 }
-/* line 87, ../scss/style.scss */
+/* line 96, ../scss/style.scss */
 .content .facts li:first-child {
   padding-top: 2em;
 }
-/* line 90, ../scss/style.scss */
+/* line 99, ../scss/style.scss */
 .content .masze {
   flex: 3;
 }
-/* line 93, ../scss/style.scss */
+/* line 102, ../scss/style.scss */
 .content .price {
   color: #000;
 }
-/* line 96, ../scss/style.scss */
+/* line 105, ../scss/style.scss */
 .my .content {
   background-image: url(../img/item-bg-my.svg);
   background-size: auto 0%;
 }
-/* line 100, ../scss/style.scss */
+/* line 109, ../scss/style.scss */
 .my:hover .content {
   background-size: auto 30%;
   -webkit-transition: all 200ms ease-in;
@@ -127,14 +138,14 @@ li {
   -o-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
 }
-/* line 104, ../scss/style.scss */
+/* line 113, ../scss/style.scss */
 .other .content {
   background-image: url(../img/item-bg-other.svg);
   background-size: auto 0%;
 }
-/* line 108, ../scss/style.scss */
+/* line 117, ../scss/style.scss */
 .other:hover .content {
-  background-size: auto 70%;
+  background-size: auto 80%;
   -webkit-transition: all 200ms ease-in;
   -moz-transition: all 200ms ease-in;
   -ms-transition: all 200ms ease-in;
@@ -142,18 +153,18 @@ li {
   transition: all 200ms ease-in;
 }
 
-/* line 114, ../scss/style.scss */
+/* line 123, ../scss/style.scss */
 .icon {
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 50% 75%;
   background-size: auto 80%;
 }
-/* line 118, ../scss/style.scss */
+/* line 127, ../scss/style.scss */
 .my .icon {
   background-image: url(../img/spool.svg);
   /*height: 110px;*/
 }
-/* line 122, ../scss/style.scss */
+/* line 131, ../scss/style.scss */
 .other .icon {
   background-image: url(../img/stringset.svg);
 }
