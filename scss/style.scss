@@ -1,3 +1,10 @@
+@mixin transition{
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-o-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
 body {
 	font-family: 'Open Sans' sans-serif;
 	font-size: 14px;
@@ -5,14 +12,17 @@ body {
 
 ul, li {
 	list-style-image: url('../img/bullet.svg');
+	margin: 0;
+	font-size: 1vw;
 }
 h2{
 	font-size: 1.2em;
 	font-weight: 600;
 }
 .price {
-	font-size: 2em;
+	font-size: 3em;
 	line-height: 2;
+	opacity: 0;
 }
 .masze, .price{
 	font-weight: 700;
@@ -22,6 +32,8 @@ li{
 }
 
 .wrapper{
+	width: 70%;
+	margin: 0 auto;
 	display: flex;
 	justify-content: space-around;
 	align-items:flex-end;
@@ -33,46 +45,83 @@ li{
 		.headline {
 		border-top: 2px solid #333;
 		}
-		.content > *{
-		border-top: 1px dashed #333;
+	&.info{
+		flex: 2;
+	}
+	&.my:hover, &.other:hover{
+		.price {
+			opacity: 1;
+			@include transition;
 		}
-		.content > *:first-child{
-			border: 0;
-		}
-		
+	}
+	&.my{
+		background: url(../img/bg-my.svg) transparent no-repeat 50% 35%;
+		background-size: 0%;
+	}
+	&.my:hover{
+		background-size: 50%;
+		@include transition;
+	}
 	}
 
 }
 
-	.content{
-
+.content{
+	min-height: 500px;
 	margin: 0 2em;
 	background-repeat:repeat-x;
 	background-position: center bottom;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
 	
-	
+	> * {
+		flex: 1;
+		border-top: 1px dashed white;
+		/*border: 1px solid red;*/
+		height: 100px;
+	}
+	.facts {
+		text-align: left;
+		border-color: #333;
+		li:first-child {padding-top: 2em;
+	}
+	}
+	.masze{
+		flex: 3;
+	}
+	.price {
+		color: #000;
+	}
 	.my &{
 	background-image:url(../img/item-bg-my.svg);
-	background-size: auto 110px;
-	
+	background-size: auto 0%;
+	}
+	.my:hover &{
+		background-size: auto 30%;
+		@include transition;
 	}
 	.other &{
 	background-image:url(../img/item-bg-other.svg);
-	background-size: auto 262px;
+	background-size: auto 0%;
 	}
+	.other:hover &{
+		background-size: auto 70%;
+		@include transition;
 	}
+}
 
 .icon{
 	background-repeat:no-repeat;
-	background-position: center bottom;
-    background-size: auto 60px;
-    .my & {
-    	background-image:url(../img/spool.svg);	
-    	/*height: 110px;*/
-    }
-    .other & {
-    	background-image: url(../img/stringset.svg);
-    }
-    
+	background-position: 50% 50%;
+	background-size: auto 80%;
+	.my & {
+		background-image:url(../img/spool.svg);
+		/*height: 110px;*/
+	}
+	.other & {
+		background-image: url(../img/stringset.svg);
+	}
+	
 }
 
