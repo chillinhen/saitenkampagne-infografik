@@ -5,6 +5,30 @@
 	-o-transition: all 200ms ease-in;
 	transition: all 200ms ease-in;
 }
+@mixin flexbox-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flexdirection($option){
+    -webkit-box-flex-direction: $option;
+    -moz-box-flex-direction: $option;
+    -webkit-flex-direction: $option;
+    -ms-flex-direction: $option;
+}
+@mixin flex-wrap ($direction,$method){
+    flex-flow: $direction $method;
+    -webkit-flex-flow:$direction $method;
+}
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
 #infographic {
 	margin-top: 50px;
 	ul, li {
@@ -49,12 +73,12 @@
 	width: 100%;
 }
 .wrapper{
-	display: flex;
+	@include flexbox-container;
 	justify-content: space-around;
 	align-items:flex-end;
 	
 	.item {
-		flex: 1;
+		@include flex(1);
 		text-align: center;
 		
 		.headline {
@@ -62,7 +86,7 @@
 		}
 
 	&.info{
-		flex: 2;
+                @include flex(2);
 	}
 
 	&.my{
@@ -85,12 +109,12 @@
 	margin: 0 1em;
 	background-repeat:repeat-x;
 	background-position: center bottom;
-	display: flex;
-	flex-direction: column;
+	@include flexbox-container;
+	@include flexdirection(column-reverse);
 	justify-content: flex-end;
 	
 	> * {
-		flex: 1;
+		@include flex(1);
 		border-top: 1px dashed white;
 		@media screen and (min-width:768px){
 			height: 100px;
@@ -103,7 +127,7 @@
 		li:first-child {padding-top: 2em;}
 		
 	.masze{
-		flex: 3;
+		@include flex(3);
 	}
 	&:hover .price {
 		opacity: 1 !important;
@@ -120,9 +144,9 @@
 		}
 
 	}
-/*	.my & > .empty {
+	.my & > .empty {
 		border: 0 !important;
-	}*/
+	}
 	.other &{
 	background-image:url('../images/kampagne/item-bg-other.svg');
 	@media screen and (max-width:600px){
