@@ -5,34 +5,43 @@
 	-o-transition: all 200ms ease-in;
 	transition: all 200ms ease-in;
 }
-body {
-	font-family: 'Open Sans' sans-serif;
-	font-size: 14px;
-}
-
-ul, li {
-	list-style-image: url('../img/bullet.svg');
-	margin: 0;
-	font-size: 1vw;
-}
-h2{
-	font-size: 1.2em;
-	font-weight: 800;
-	height: 2em;
-}
-.price {
-	font-size: 3em;
-	line-height: 2;
-	opacity: 0;
-}
-.masze, .price{
-	font-weight: 700;
-}
-li{
-	line-height: 2;
+#infographic {
+	margin-top: 50px;
+	ul, li {
+		list-style-image: url('../images/kampagne/bullet.svg');
+		margin: 0;
+		font-size: 1vw;
+	}
+	.headline{
+		font-size: 1.2em;
+		font-weight: 800;
+		height: 2em;
+		letter-spacing: .2;
+	}
+	.price {
+	@media screen and (max-width:480px){
+		font-size: 1em !important;
+	}
+	@media screen and (min-width:481px) and (max-width:600px){
+		font-size: 2em !important;
+	}
+		font-size: 3em;
+		line-height: 2;
+		opacity: 0;
+		color: #000;
+		@media screen and (max-width:600px){
+			opacity: 1;
+		}
+	}
+	.masze, .price{
+		font-weight: 700;
+	}
+	li{
+		line-height: 2;
+	}
 }
 .my .headline{
-	background: url(../img/logo.png) center center no-repeat transparent;
+	background: url('../images/kampagne/logo.png') center center no-repeat transparent;
 	background-size: contain;
 	text-indent: -200%;
 	display: block;
@@ -40,8 +49,6 @@ li{
 	width: 100%;
 }
 .wrapper{
-	width: 70%;
-	margin: 50px auto;
 	display: flex;
 	justify-content: space-around;
 	align-items:flex-end;
@@ -57,14 +64,9 @@ li{
 	&.info{
 		flex: 2;
 	}
-	&.my:hover, &.other:hover{
-		.price {
-			opacity: 1;
-			@include transition;
-		}
-	}
+
 	&.my{
-		background: url(../img/bg-my.svg) transparent no-repeat 50% 35%;
+		background: url('../images/kampagne/bg-my.svg') transparent no-repeat 50% 35%;
 		background-size: 0%;
 	}
 	&.my:hover{
@@ -76,8 +78,11 @@ li{
 }
 
 .content{
-	min-height: 420px;
-	margin: 0 2em;
+	@media screen and (min-width:768px){
+		min-height: 420px;
+		margin: 0 2em;
+	}
+	margin: 0 1em;
 	background-repeat:repeat-x;
 	background-position: center bottom;
 	display: flex;
@@ -87,49 +92,69 @@ li{
 	> * {
 		flex: 1;
 		border-top: 1px dashed white;
-		/*border: 1px solid red;*/
-		height: 100px;
+		@media screen and (min-width:768px){
+			height: 100px;
+		}
 	}
 	.facts {
 		text-align: left;
 		border-color: #333;
-		li:first-child {padding-top: 2em;
-	}
-	}
+		}
+		li:first-child {padding-top: 2em;}
+		
 	.masze{
 		flex: 3;
 	}
-	.price {
-		color: #000;
-	}
-	.my &{
-	background-image:url(../img/item-bg-my.svg);
-	background-size: auto 0%;
-	}
-	.my:hover &{
-		background-size: auto 30%;
+	&:hover .price {
+		opacity: 1 !important;
 		@include transition;
 	}
+	.my & {
+		background-image:url('../images/kampagne/item-bg-my.svg');
+	
+		@media screen and (max-width:600px){
+			background-size: auto 40%;
+		}
+		@media screen and (min-width:601px){
+				background-size: auto 30%;
+		}
+
+	}
+/*	.my & > .empty {
+		border: 0 !important;
+	}*/
 	.other &{
-	background-image:url(../img/item-bg-other.svg);
-	background-size: auto 0%;
+	background-image:url('../images/kampagne/item-bg-other.svg');
+	@media screen and (max-width:600px){
+		background-size: auto 60%;
 	}
-	.other:hover &{
-		background-size: auto 80%;
-		@include transition;
+		@media screen and (min-width:601px){
+				background-size: auto 80%;
+		}
 	}
+}
+.item:not(.info) .content:hover{
+	animation-duration: 3s;
+	animation-name: fadeInUp;
 }
 
 .icon{
 	background-repeat:no-repeat;
-	background-position: 50% 75%;
+	background-position: 50% 80%;
 	background-size: auto 80%;
+	min-height: 75px;
+	
+	@media screen and (max-width:480px){
+		min-height: 25px;
+	}
+	@media screen and (min-width:481px) and (max-width:600px){
+		min-height: 50px;
+	}
 	.my & {
-		background-image:url(../img/spool.svg);
-		/*height: 110px;*/
+		background-image:url('../images/kampagne/spool.svg');
 	}
 	.other & {
-		background-image: url(../img/stringset.svg);
+		background-image: url('../images/kampagne/stringset.svg');
 	}
 	
 }
