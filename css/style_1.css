@@ -1,0 +1,121 @@
+/* line 8, ../scss/style_1.scss */
+#infographic {
+  margin-top: 50px; }
+  /* line 10, ../scss/style_1.scss */
+  #infographic ul, #infographic li {
+    list-style-image: url("../images/kampagne/bullet.svg");
+    margin: 0;
+    font-size: 1vw; }
+  /* line 15, ../scss/style_1.scss */
+  #infographic li {
+    line-height: 2; }
+  /* line 18, ../scss/style_1.scss */
+  #infographic .masze, #infographic .price {
+    font-weight: 700; }
+  /* line 21, ../scss/style_1.scss */
+  #infographic .headline {
+    font-size: 1.2em;
+    font-weight: 800;
+    height: 2em;
+    letter-spacing: .2;
+    border-top: 2px solid #333; }
+  /* line 29, ../scss/style_1.scss */
+  #infographic .my .headline {
+    background: url("../images/kampagne/logo.png") center center no-repeat transparent;
+    background-size: contain;
+    text-indent: -200%;
+    display: block;
+    overflow: hidden;
+    width: 100%; }
+  /* line 38, ../scss/style_1.scss */
+  #infographic .price {
+    font-size: 3em;
+    line-height: 2;
+    opacity: 0;
+    color: #000; }
+    @media screen and (max-width: 480px) {
+      /* line 38, ../scss/style_1.scss */
+      #infographic .price {
+        font-size: 1em !important; } }
+    @media screen and (min-width: 481px) and (max-width: 600px) {
+      /* line 38, ../scss/style_1.scss */
+      #infographic .price {
+        font-size: 2em !important; } }
+    @media screen and (max-width: 600px) {
+      /* line 38, ../scss/style_1.scss */
+      #infographic .price {
+        opacity: 1; } }
+
+/* line 54, ../scss/style_1.scss */
+.wrapper {
+  width: 100%; }
+  /* line 56, ../scss/style_1.scss */
+  .wrapper:after {
+    content: ' ';
+    clear: both;
+    display: block; }
+  /* line 61, ../scss/style_1.scss */
+  .wrapper .item {
+    float: left; }
+    /* line 64, ../scss/style_1.scss */
+    .wrapper .item.info {
+      width: 50%; }
+    /* line 68, ../scss/style_1.scss */
+    .wrapper .item.my {
+      width: 25%; }
+    /* line 72, ../scss/style_1.scss */
+    .wrapper .item.other {
+      width: 25%; }
+
+/* line 79, ../scss/style_1.scss */
+.content {
+  margin: 0 1em;
+  background-repeat: repeat-x;
+  background-position: bottom left;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    /* line 79, ../scss/style_1.scss */
+    .content {
+      height: 400px;
+      margin: 0 2em; } }
+  /* line 90, ../scss/style_1.scss */
+  .content > * {
+    height: 100px;
+    border-top: 1px dashed white; }
+  /* line 94, ../scss/style_1.scss */
+  .content .facts {
+    text-align: left;
+    border-color: #333; }
+    /* line 98, ../scss/style_1.scss */
+    .content .facts li:first-child {
+      padding-top: 2em; }
+  /* line 100, ../scss/style_1.scss */
+  .content:hover .price {
+    opacity: 1 !important;
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -ms-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in; }
+  /* line 104, ../scss/style_1.scss */
+  .my .content {
+    background-image: url("../images/kampagne/item-bg-my.svg"); }
+    @media screen and (max-width: 600px) {
+      /* line 104, ../scss/style_1.scss */
+      .my .content {
+        background-size: auto 40%; } }
+    @media screen and (min-width: 601px) {
+      /* line 104, ../scss/style_1.scss */
+      .my .content {
+        background-size: auto 30%; } }
+  /* line 113, ../scss/style_1.scss */
+  .other .content {
+    background-image: url("../images/kampagne/item-bg-other.svg"); }
+    @media screen and (max-width: 600px) {
+      /* line 113, ../scss/style_1.scss */
+      .other .content {
+        background-size: auto 60%; } }
+    @media screen and (min-width: 601px) {
+      /* line 113, ../scss/style_1.scss */
+      .other .content {
+        background-size: auto 75%; } }

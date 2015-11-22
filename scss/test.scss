@@ -1,0 +1,104 @@
+
+
+.wrapper{
+	width: 100%;
+	&:after{
+		content: ' ';
+		clear:both;
+		display: block;
+	}
+	.item{
+		float: left;
+		
+		&.info{
+			width: 50%;
+		}
+		
+		&.my{
+			width: 25%;
+                        background:transparent url("../images/kampagne/bg-my.svg") no-repeat 50% 35% / 0%;
+                        &:hover {
+                           background-size: 50%;
+                           @include transition; 
+                        }
+                }
+                
+		
+		&.other{
+			width: 25%;
+		}
+	}
+}
+.content{
+	margin: 0 1em;
+	background-repeat:repeat-x;
+	background-position: bottom left;
+	text-align: center;
+	
+	@media screen and (min-width:768px){
+		margin: 0 2em;
+	}
+	
+	> * {
+            height :130px;
+            display: block;
+            border-top: 1px dashed white;
+	}
+	.facts {
+		text-align: left;
+		border-color: #333;
+                ul {
+                    padding:2em 0 0 0;
+                }
+                li{
+                    line-height: 2;
+                    background:transparent url("../images/kampagne/bullet.svg") no-repeat scroll left center / 1em auto;
+                    padding-left: 2em;
+                }
+	}
+	.my & {
+		background-image:url('../images/kampagne/item-bg-my.svg');
+		@media screen and (max-width:600px){
+			background-size: auto 40%;
+		}
+		@media screen and (min-width:601px){
+				background-size: auto 30%;
+		}
+	}
+	.other &{
+		background-image:url('../images/kampagne/item-bg-other.svg');
+		@media screen and (max-width:600px){
+			background-size: auto 60%;
+		}
+		@media screen and (min-width:601px){
+				background-size: auto 75%;
+		}
+	}
+        .my & > .empty {
+		border: 0 !important;
+	}
+
+        &:hover .price {
+            opacity: 1 !important;
+            @include transition;
+        }
+}
+.item:not(.info) .content:hover{
+	animation-duration: 3s;
+	animation-name: fadeInUp;
+}
+.icon{
+    background: inherit;
+    img {
+       	height: 75px;
+        margin:2em 0;
+	
+	@media screen and (max-width:480px){
+		min-height: 25px;
+	}
+	@media screen and (min-width:481px) and (max-width:600px){
+		min-height: 50px;
+	} 
+    }
+	
+}

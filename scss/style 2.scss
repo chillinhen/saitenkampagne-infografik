@@ -17,6 +17,7 @@
     -moz-box-flex-direction: $option;
     -webkit-flex-direction: $option;
     -ms-flex-direction: $option;
+    flex-direction: $option;
 }
 @mixin flex-wrap ($direction,$method){
     flex-flow: $direction $method;
@@ -80,57 +81,46 @@
 .wrapper{
         @include flexbox-container;
 	width: 100%;
-	&:after{
+/*	&:after{
 		content: ' ';
 		clear:both;
 		display: block;
-	}
-	.item {
-		@include flex(1);
-		text-align: center;
+	}*/
+	.item{
+                @include flexbox-container;
+                @include flexdirection(column);
+                position:relative;
 		
-		.headline {
-		border-top: 2px solid #333;
-		}
-
 		&.info{
+/*			width: 50%;*/
                 @include flex(2);
+               
+		}		
+		&.other, &.my{
+/*			width: 25%;*/
+                @include flex(1);
 		}
-		
-		&.my{
-			width: 25%;
-                        background:transparent url("../images/kampagne/bg-my.svg") no-repeat 50% 35% / 0%;
-                        &:hover {
-                           background-size: 50%;
-                           @include transition; 
-                        }
+                > * {
+                    @include flex(1);
                 }
-                
-		
-		&.other{
-			width: 25%;
-		}
 	}
 }
 .content{
-	margin: 0 1em;
-	background-repeat:repeat-x;
-	background-position: bottom left;
 	text-align: center;
-	
+        background: #eee;
+        height :400px;
+	@include flexbox-container;
+        @include flexdirection(column);
 	@media screen and (min-width:768px){
 		margin: 0 2em;
 	}
-	margin: 0 1em;
-	background-repeat:repeat-x;
-	background-position: center bottom;
-	@include flexbox-container;
-	@include flexdirection(column-reverse);
-	justify-content: flex-end;
 	
 	> * {
-		@include flex(1);
-            border-top: 1px dashed white;
+            @include flex(1);
+            width:100%;
+            display: block;
+/*            border-top: 1px dashed white;*/
+            background-color:transparent;
 	}
 	.facts {
 		text-align: left;
@@ -144,39 +134,50 @@
                     padding-left: 2em;
                 }
 	}
-	.my & {
-		background-image:url('../images/kampagne/item-bg-my.svg');
-		@media screen and (max-width:600px){
-			background-size: auto 40%;
-		}
-		@media screen and (min-width:601px){
-				background-size: auto 30%;
-		}
-	}
-	.other &{
-		background-image:url('../images/kampagne/item-bg-other.svg');
-		@media screen and (max-width:600px){
-			background-size: auto 60%;
-		}
-		@media screen and (min-width:601px){
-				background-size: auto 75%;
-		}
-	}
         .my & > .empty {
 		border: 0 !important;
 	}
-
         &:hover .price {
             opacity: 1 !important;
             @include transition;
         }
 }
-.item:not(.info) .content:hover{
-	animation-duration: 3s;
-	animation-name: fadeInUp;
+.item {
+    position: relative;
+    &:not(.info) .content:before{
+    content:' ';
+
+    display: inline-block;
+    width: 80%;
+
+    position: absolute;
+    bottom:4em;
+    left:50%;
+    margin-left:-40%;
+    }
+    &.my{
+        background:transparent url("../images/kampagne/bg-my.svg") no-repeat 50% 35% / 0%;
+        &:hover {
+            background-size: 50%;
+            @include transition; 
+        }
+    }
+    &.my .content:before{
+       background-image: url("../images/kampagne/item-bg-my.svg"); 
+       height:140px;
+    }
+        &.other .content:before{
+       background-image: url("../images/kampagne/item-bg-other.svg"); 
+       height:210px;
+    }
 }
+
 .icon{
-    background: inherit;
+    background: transparent;
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+    margin-left: -50%;
     img {
        	height: 75px;
         margin:2em 0;
